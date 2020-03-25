@@ -75,10 +75,27 @@ class LRUCache:
         # now we have to move the key value pair to the end/begining of the line
         self.order.move_to_end(node)
 
+        return
     # if number of key:value pair is at self.storage max self.limits
     if self.limit == self.limit:
         # then remove oldest key:value pair remove from tail
+        # the
+        del self.storage[self.order.head.value[0]]
+        # self.order.add_to_head(node)
+        # ok so here we have to remove the oldest item so
+        # linked list is FILO/LIFO so the head is always going to be the
+        # oldest item. Which is the item that we are needing to remove
+        self.order.remove_from_head()
+        # now that it is remove we now have to update the size of the LL
+        self.size -= 1
+    # ok so now that we have the oldest out (head) we have to udate the ll from
+    # the back. so we are going to hae to update the new key value from the tail
+    # question here is why do we us k/v instead of node. remember to ask why
+    self.order.add_to_tail((key,value ))
+    self.storage.key = self.order.tail
 
+    #now you have to update the size of the list
+    self.size += 1
     # now if key already is in cache
     # set the old key = to the new key
-        pass
+        
