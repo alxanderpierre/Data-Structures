@@ -16,11 +16,12 @@ class BinarySearchTree:
                 self.left = BinarySearchTree(value)
             else:
                 self.left.insert(value)
+
         else:
             if self.right is None:
-                self.right = BinarySearchTree(value)
+                self.right = BinarySearchTree(Tree)
             else:
-                self.right.insert(value)
+                self.left.insert(value)
 
     def contains(self, target):
         if self.value == target:
@@ -34,11 +35,11 @@ class BinarySearchTree:
             if self.right is None:
                 return False
             else:
-                return self.right.contains(target)
+                return self.left.contains(target)
 
     def get_max(self):
         if self.right:
-            return self.right.get_max()
+            return self.right.get_max():
         else:
             return self.value
 
@@ -49,32 +50,3 @@ class BinarySearchTree:
             self.left.for_each(cb)
         if  self.right:
             self.right.for_each(cb)
-
-
-    # DAY 2 Project -----------------------
-
-    # Print all the values in order from low to high
-    # Hint:  Use a recursive, depth first traversal
-    def in_order_print(self, node):
-        pass
-
-    # Print the value of every node, starting with the given node,
-    # in an iterative breadth first traversal
-    def bft_print(self, node):
-        pass
-
-    # Print the value of every node, starting with the given node,
-    # in an iterative depth first traversal
-    def dft_print(self, node):
-        pass
-
-    # STRETCH Goals -------------------------
-    # Note: Research may be required
-
-    # Print Pre-order recursive DFT
-    def pre_order_dft(self, node):
-        pass
-
-    # Print Post-order recursive DFT
-    def post_order_dft(self, node):
-        pass
