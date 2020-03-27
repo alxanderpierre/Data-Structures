@@ -65,19 +65,29 @@ class BinarySearchTree:
         # add a root to the queue you create
         enqueue(node)
         # while queue is not empty (create a while loop)
-        while q not None:
-        # node = head of queue
-            node=self.storage.add_to_head()
-        # DO THE THING (print )
-        # add children of node to queue
-        # pop node off queue
+        while q.len() > 0:
+            temp = q.dequeue()
+            print(temp)
+            if temp.left:
+                q.enqueue(temp.left)
+            if temp.right:
+                q.enqueue(temp.right)
 
-        pass
+
+        
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        stack = Stack()
+        stack.push(node)
+        while stack.len() > 0:
+            temp = stack.pop()
+            print(temp)
+            if temp.left:
+                stack.push(temp.left)
+            if temp.right:
+                stack.push(temp.right)
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
