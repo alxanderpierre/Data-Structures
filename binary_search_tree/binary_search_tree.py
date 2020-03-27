@@ -42,10 +42,9 @@ class BinarySearchTree:
         else:
             return self.value
 
-    def for_each(self,cd):
+    def for_each(self,cb):
         cb(self.value)
-
-        if slef.left:
+        if self.left:
             self.left.for_each(cb)
         if  self.right:
             self.right.for_each(cb)
@@ -61,6 +60,18 @@ class BinarySearchTree:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
+        # create a queue
+        q = Queue()
+        # add a root to the queue you create
+        enqueue(node)
+        # while queue is not empty (create a while loop)
+        while q not None:
+        # node = head of queue
+            node=self.storage.add_to_head()
+        # DO THE THING (print )
+        # add children of node to queue
+        # pop node off queue
+
         pass
 
     # Print the value of every node, starting with the given node,
